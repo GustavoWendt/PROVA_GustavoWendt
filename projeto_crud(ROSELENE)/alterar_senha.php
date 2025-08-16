@@ -5,7 +5,7 @@ require 'conexao.php';
 //GARANTE QUE O USUÁRIO ESTEJA LOGADO
 
 if(!isset($_SESSION['id'])){
-    echo "<script>alert('Acesso Negado'); window.location.href='login.php';</script>";
+    echo "<script>alert('Acesso Negado'); window.location.href='index.php';</script>";
     exit();
 }
 
@@ -15,11 +15,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $confirmar_senha = $_POST['confirmar_senha'];
 
     if($nova_senha !== $confirmar_senha){
-        echo "<script>alert('As senhas não coincidem!'); window.location.href='index.php';</script>";
+        echo "<script>alert('As senhas não coincidem!'); window.location.href='login.php';</script>";
     }elseif(strlen($nova_senha) < 8){
         echo "<script>alert('A senha deve ter pelo menos 8 caracteres'); window.location.href='alterar_senha.php';</script>";
     } elseif($nova_senha === "temp123"){
-        echo "<script>alert('Escolha uma senha diferente de temporaria'); window.location.href='index.php';</script>";
+        echo "<script>alert('Escolha uma senha diferente de temporaria'); window.location.href='login.php';</script>";
     }else{
         $senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
 
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         if($stmt->execute()){
             session_destroy(); // FINALIZA A SESSAO
-            echo "<script>alert('Senha alterada com sucesso! Faça login novamente'); window.location.href='index.php';</script>";
+            echo "<script>alert('Senha alterada com sucesso! Faça login novamente'); window.location.href='login.php';</script>";
     } else{
         echo "<script>alert('Erro ao alterar a senha!');</script>";
 }

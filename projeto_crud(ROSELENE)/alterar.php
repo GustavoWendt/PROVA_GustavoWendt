@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <input type="email" id="email" name="email" required>
         </br>
 
-        <button type="submit">cadastrar</button>
+        <button type="submit">Alterar</button>
     </form>
 
     <p><a href="index.php">Menu principal</a>
