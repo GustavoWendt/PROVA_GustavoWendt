@@ -38,3 +38,7 @@ Para: sergio@sergio
 Olá! Sua nova senha temporária é: 98cVRsNn
 
 ----------------------
+Para: admin@admin
+Olá! Sua nova senha temporária é: 3Z52Lkwq
+
+----------------------

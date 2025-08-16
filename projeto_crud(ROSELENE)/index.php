@@ -22,28 +22,28 @@
         <li class="dropdow">
             <a href="javascript:void(0)" class="dropbtn">Pesquisar</a>
             <div class="dropdow-content">
-                <a href=buscar_funcionario.php>Pesquisar cliente</a>
+                <a href=buscar.php>Pesquisar cliente</a>
             </div>
         </li>
         
         <li class="dropdow">
             <a href="javascript:void(0)" class="dropbtn">Excluir</a>
             <div class="dropdow-content">
-                <a href=Excluir_funcionario.php>Excluir funcionario</a>
+                <a href=excluir.php>Excluir funcionario</a>
             </div>
         </li>
 
                 <li class="dropdow">
             <a href="javascript:void(0)" class="dropbtn">Alterar</a>
             <div class="dropdow-content">
-                <a href=Alterar_funcionario.php>Alterar Cliente</a>
+                <a href=busca_alterar.php>Alterar Cliente</a>
             </div>
         </li>
 
-        <li class="dropdow">
-            <a href="javascript:void(0)" class="dropbtn">Alterar</a>
-            <form action="logout.php" method="POST">
-                <button type="submit">logout</button>
+            <li class="dropdow">
+            <a href="javascript:void(0)" class="dropbtn">Logout</a>
+            <div class="dropdow-content">
+                <a href=login.php>Logout</a>
             </div>
         </li>
     </ul>
