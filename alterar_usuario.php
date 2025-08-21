@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'conexao.php';
+require_once 'Dropdow.php';
 
 //VERIFICA SE O USUÁRIO TEM PERMISSÃO DE ADM
 
@@ -59,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         <button type="submit">Buscar</button>
     </form>
 
-    <?php if ($usuario): ?>
+    <?php if($usuario): ?>
         <form action="processa_alteracao_usuario.php" method="POST">
             <input type="hidden" name="id_usuario" value="<?=htmlspecialchars($usuario['id_usuario'])?>">
 
@@ -79,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
             <!--SE O USUÁRIO FOR ad, EXIBIR OPÇÃO DE ALTERAR senha-->
 
-            <?php if ($_SESSION['perfil'] == 1): ?>
+            <?php if($_SESSION['perfil'] == 1): ?>
                 <label for="nova_senha">Nova Senha</label>
                 <input type="password" id="nova_senha" name="nova_senha">
             <?php endif; ?>
@@ -89,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
             
         </form>
         <?php endif; ?>
-        
+
         <a href="principal.php">Voltar</a>
 </body>
 </html>

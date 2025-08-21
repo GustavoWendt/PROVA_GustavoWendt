@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'conexao.php';
+require_once 'Dropdow.php';
 
 //VERIFICA SE O USUÁRIO TENHA PERMISSÃO
 //SUPONDO QUE O PERFIL "1" SEJA O ADM
