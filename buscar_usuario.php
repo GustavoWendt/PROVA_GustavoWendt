@@ -43,7 +43,8 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Usuario</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo1.css">
 </head>
 <body>
     <h2>Lista de usuários</h2>
@@ -71,9 +72,9 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?=htmlspecialchars($usuario['email'])?></td>
                 <td><?=htmlspecialchars($usuario['id_perfil'])?></td>
                 <td>
-                    <a href="alterar_usuario.php?id=<?=htmlspecialchars($usuario['id_usuario'])?>">Alterar</a>
+                    <a href="alterar_usuario.php?id=<?=htmlspecialchars($usuario['id_usuario'])?>"><button class="alterar">Alterar</button></a>
                     </br>
-                    <a href="excluir_usuario.php?id=<?= htmlspecialchars($usuario['id_usuario']) ?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</a>
+                    <a href="excluir_usuario.php?id=<?= htmlspecialchars($usuario['id_usuario']) ?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?')"><button class="excluir">Excluir</button></a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -82,6 +83,8 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p> Nenhum usuário encontrado.</p>
         <?php endif; ?>
 
-        <a href="principal.php">Voltar</a>
+        <address>
+            Gustavo Wendt /estudante / tecnico em sistemas 
+        </address>
 </body>
 </html>

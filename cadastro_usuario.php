@@ -13,7 +13,7 @@ if($_SESSION['perfil']!= 1){
 }
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $nome= $_POST["nome"];
+    $nome= $_POST["nome2"];
     $email = $_POST["email"];
     $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
     $id_perfil = $_POST["id_perfil"];
@@ -39,17 +39,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script src="mascaras.js"></script>
 </head>
 <body>
     <h2>Cadastrar usuário</h2>
     <form action="cadastro_usuario.php" method="POST">
+        
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required onkeypress ="mascara(this, nome)">
+        <input type="text" id="nome2" name="nome2" required onkeypress ="mascara(this, nome)">
+        
+
         
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required onkeypress ="mascara(this, email)">
 
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" required >
@@ -67,6 +70,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <button type="reset">Cancelar</button>
     </form>
 
-    <a href="principal.php">Voltar</a>
+    <address>
+            Gustavo Wendt /estudante / tecnico em sistemas 
+    </address>
 </body>
 </html>

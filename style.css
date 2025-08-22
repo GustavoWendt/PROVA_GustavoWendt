@@ -168,3 +168,27 @@ button {
 button:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
+
+.alterar{
+    background-color: #0051ff;
+    width: 50%;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.excluir{
+    background-color: red;
+    width: 50%;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}

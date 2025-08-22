@@ -26,13 +26,17 @@ $permissoes = [
 
                    "Alterar"=>["alterar_usuario.php","alterar_perfil.php","alterar_cliente.php","alterar_fornecedor.php","alterar_produto.php","alterar_funcionario.php"],
 
-                   "Excluir"=>["excluir_usuario.php","excluir_perfil.php","excluir_cliente.php","excluir_fornecedor.php","excluir_produto.php","excluir_funcionario.php"]],
+                   "Excluir"=>["excluir_usuario.php","excluir_perfil.php","excluir_cliente.php","excluir_fornecedor.php","excluir_produto.php","excluir_funcionario.php"],
+
+                   "Menu"=>["principal.php"]],
 
                 2=>["Cadastrar"=>["cadastro_cliente.php"],
 
                    "Buscar"=>["buscar_cliente.php","buscar_fornecedor.php","buscar_produto.php"],
 
-                   "Alterar"=>["alterar_cliente.php","alterar_fornecedor.php"]],
+                   "Alterar"=>["alterar_cliente.php","alterar_fornecedor.php"],
+
+                   "Menu"=>["principal.php"]],
 
                 3=>["Cadastrar"=>["cadastro_fornecedor.php","cadastro_produto.php"],
 
@@ -40,7 +44,9 @@ $permissoes = [
 
                    "Alterar"=>["alterar_fornecedor.php","alterar_produto.php"],
 
-                   "Excluir"=>["excluir_produto.php"]],
+                   "Excluir"=>["excluir_produto.php"],
+                   
+                   "Menu"=>["principal.php"]],
 
                 4=>["Cadastrar"=>["cadastro_cliente.php"],
 
@@ -48,7 +54,9 @@ $permissoes = [
 
                    "Alterar"=>["alterar_cliente.php"],
 
-                   "Excluir"=>["excluir_usuario.php","excluir_perfil.php","excluir_cliente.php","excluir_fornecedor.php","excluir_produto.php","excluir_funcionario.php"]],
+                   "Excluir"=>["excluir_usuario.php","excluir_perfil.php","excluir_cliente.php","excluir_fornecedor.php","excluir_produto.php","excluir_funcionario.php"],
+
+                   "Menu"=>["principal.php"]],
 
 
 ];

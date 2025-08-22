@@ -41,7 +41,8 @@ if(isset($_GET["id"]) && is_numeric( $_GET["id"] )){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Usuário</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo1.css">
 </head>
 <body>
     <h2>Excluir Usuários</h2>
@@ -62,7 +63,7 @@ if(isset($_GET["id"]) && is_numeric( $_GET["id"] )){
                     <td><?=htmlspecialchars($usuario['email'])?></td>
                     <td><?=htmlspecialchars($usuario['id_perfil'])?></td>
                     <td>
-                        <a href="excluir_usuario.php?id=<?= htmlspecialchars($usuario['id_usuario'])?>"onclick="return confirm('Tem certeza que deseja excluir esse usuário?')">Excluir</a>
+                        <a href="excluir_usuario.php?id=<?= htmlspecialchars($usuario['id_usuario'])?>"onclick="return confirm('Tem certeza que deseja excluir esse usuário?')"><button class="excluir">Excluir</button></a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -70,8 +71,10 @@ if(isset($_GET["id"]) && is_numeric( $_GET["id"] )){
         <?php else: ?>
             <p>Nenhum usuário encontrado</p>
     <?php endif; ?>
+ 
+    <address>
+            Gustavo Wendt /estudante / tecnico em sistemas 
+    </address>
 
-    <a href="principal.php">Voltar</a>
-    
 </body>
 </html>

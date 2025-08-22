@@ -1,30 +1,51 @@
-// EXECUTAR MASCARAS
-function mascara(o,f){
-    //Define o objeto e chama a função
-    objeto=o
-    funcao=f
-    setTimeout("executaMascara()",1)
+// EXECUTAR MÁSCARAS
+function mascara(o, funcao) {
+    setTimeout(function () {
+        o.value = funcao(o.value);
+    }, 1);
 }
 
-function executaMascara(){
-    objeto.value=funcao(objeto.value)
+// MÁSCARAS
+function telefone(v) {
+    v = v.replace(/\D/g, "");
+    v = v.replace(/^(\d\d)(\d)/g, "($1) $2");
+    v = v.replace(/(\d{5})(\d)/, "$1-$2");
+    return v;
 }
 
-//MASCARAS
-//TELEFONE
-function telefone(variavel){
-    variavel=variavel.replace(/\D/g,"")
-    variavel=variavel.replace(/^(\d\d)(\d)/g,"($1) $2")//ADICIONA PARENTESES EM VOLTA DOS DOIS PRIMEIROS DIGITOS
-    variavel=variavel.replace(/(\d{4})(\d)/,"$1-$2")//ADICIONA HIFEM ENTRE O QUARTO E QUINTO DIGITO
-    return variavel
-}
-//rg/cpf
-
-function nome(variavel){
-    variavel=variavel.replace(/\D/,"")
+function RGeCPF(v) {
+    v = v.replace(/\D/g, "");
+    v = v.replace(/(\d{3})(\d)/, "$1.$2");
+    v = v.replace(/(\d{3})(\d)/, "$1.$2");
+    v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    return v;
 }
 
-function nome(variavel){
-    variavel=variavel.replace(/\d/g,"")//REMOVE CARACTERES NÚMERICOS
-    return variavel
+function cep(v) {
+    v = v.replace(/\D/g, "");
+    v = v.replace(/(\d{5})(\d)/, "$1-$2");
+    return v;
+}
+
+function data(v) {
+    v = v.replace(/\D/g, "");
+    v = v.replace(/(\d{2})(\d)/, "$1/$2");
+    v = v.replace(/(\d{2})(\d)/, "$1/$2");
+    return v;
+}
+
+function numero(v) {
+    return v.replace(/\D/g, "");
+}
+
+function nome(v) {
+    return v.replace(/\d/g, "");
+}
+
+function estado(v) {
+    return v.replace(/\d/g, "");
+}
+
+function cargo(v) {
+    return v.replace(/\d/g, "");
 }

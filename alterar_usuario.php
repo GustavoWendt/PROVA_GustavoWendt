@@ -36,6 +36,26 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         echo "<script>alert('Usuário não encontrado!');</script>";
     }
 }
+} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (!empty($_GET['id'])) {
+        $busca = trim($_GET["id"]);
+
+    if(is_numeric($busca)) {
+        $sql = "SELECT * FROM usuario WHERE id_usuario = :busca";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':busca' ,$busca,PDO::PARAM_INT);
+    } else {
+        $sql = "SELECT * FROM usuario WHERE nome LIKE :busca_nome";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':busca_nome', "%$busca%", PDO::PARAM_STR);
+    }
+    $stmt->execute();
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if(!$usuario){
+        echo "<script>alert('Usuário não encontrado!');</script>";
+    }
+  }
 }
 ?>
 
@@ -45,9 +65,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alterar usuário</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 <!--Certifique-se de que o Java script está sendo carregado corretamente-->
 <script src="scripts.js"></script>
+<script src="mascaras.js"></script>
 </head>
 <body>
 <h2>Alterar Usuários</h2>
@@ -65,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
             <input type="hidden" name="id_usuario" value="<?=htmlspecialchars($usuario['id_usuario'])?>">
 
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($usuario['nome'])?>" required>
+            <input type="text" id="nome2" name="nome2" value="<?=htmlspecialchars($usuario['nome'])?>" required onkeypress ="mascara(this, nome)">
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="<?=htmlspecialchars($usuario['email'])?>" required>
@@ -91,6 +112,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         </form>
         <?php endif; ?>
 
-        <a href="principal.php">Voltar</a>
+        <address>
+            Gustavo Wendt /estudante / tecnico em sistemas 
+        </address>
 </body>
 </html>
